@@ -1,0 +1,22 @@
+Linux is a multi user operating system and can be switched between the users using sudo or su utilities. Lets look into some knitty-gritties of linux user managemnet
+and permissions
+
+su is the acronym for switch user and sudo stands for super user do . Both can be used to execute the commands in the escalated or lesser privilege levels
+    sudo can be used for executing a command with different users
+    su first switches the users from one user to other , for example su root with switch the user from normal user to root user and command can be executed
+    where as sudo is used to directly execute the command , sudo defaults the user to root while executing.
+
+The information about the user and their associated group and default shell access can be seen from /etc/passwd file. There are two different types of users
+    
+    System Users: The users that are associated with the daemons/processes running on the operating system
+    Non-System Users: The users that are created for the system access. In other terms the user that is utilized by the administrator to access the system 
+    are called non-system users.
+    
+    command : cat /etc/passwd file gives the details about the system and non system users , user id , group id and default shell used for the login
+    
+    command: cat /etc/group could provide the details regarding the group that are part of sudoers file.
+    
+what is sudoers file ? In simple terms , it is the configuration file where the level of privileges can be defined for a specific user or group
+
+
+       

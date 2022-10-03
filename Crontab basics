@@ -1,0 +1,32 @@
+Crontab : crontab is nothing but a event scheduler which is native to linux which can be leveraged to execute the tasks on a specific date or a day in a week/month.
+Not only this, but also it can be used to schedule the frequency of the tasks to get executed.
+ps -ef  check the process in linux
+crontab -l list the crontab basics for the specific user
+The output of the crontab will be displayed in the below format:
+           Minutes Hours dom(date of the month) month dow(day of the week) command
+Examples:
+      a) Create a cron job to delete all log files from the home directory 
+          let us consider deleting the files in our home directory for every one minute , the cron file looks something like the below one
+            */01 * * * * rm -rf /home/vadhyar/*.log
+      b) Create a cron job to create a text file in /tmp/routine.log and write current timestamp to it every 2 minutes.
+            */02 * * * * date >> /tmp/routine.log
+            
+      c) Create a cron job to add /tmp/routine.log to .tar archive, move this archive to /home/student/ and delete the original 
+         log file after every 10 minutes.
+         
+         for the above thing lets write  all the command seperated by "&" or else a bash script can be written , let me show the both ways
+         
+          a) command seperated by "&"
+          
+            */10 * * * * cd && tar -cvf archive.tar --absolute-names /tmp/routine.log && rm /tmp/routine.log
+            
+           b) Bash script 
+               
+               #!/bin/bash
+                cd && tar -cvf archive.tar --absolute-names /tmp/routine.log && rm /tmp/routine.log
+                
+            */10 * * * * ./script.sh
+ 
+                
+                
+                

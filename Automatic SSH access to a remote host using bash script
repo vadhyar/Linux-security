@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+spawn ssh user@hostname
+expect "password:"
+send "<password"\r"
+expect "<prompt>"
+send "cmds\r"
+expect "<prompt messages>"
+send "exit\r"
